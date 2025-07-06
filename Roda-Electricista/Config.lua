@@ -1,36 +1,55 @@
 Config = {}
-Config.distance = 5.0
+Config.distance = 1.5
 Config.Car = "comet2"
 Config.Plate = "ELECTRIC"
-Config.framework = "qbcore"
+Config.framework = "esx" -- Esx or qbcore, easy to adapt to your framework.
 
 Config.Pay = math.random(1000,4000)
+Config.Account = 'bank' --This is where the money is go.
 
-Config.TargetPoints = {
-    { location = vector4(-824.88, -766.65, 21.45, 0.0), isRepaired = false },
-    { location = vector4(-826.06, -755.01, 22.54, 0.0), isRepaired = false },
+Config.postes = {
+	{prop = 'prop_streetlight_01', scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0, angularOffset = 180.0},
+	{prop = 'prop_streetlight_01b', scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0, angularOffset = 180.0},
+	{prop = 'prop_streetlight_03b', scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0, angularOffset = 180.0},
+	{prop = 'prop_telegraph_01b', scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0, angularOffset = 180.0},
 }
 
-Config.LadderOffset = 1.1
-Config.TiempoParaArreglar = 6
+Config.TiempoParaArreglar = 6  -- Segundos
 
 Config.Locales = {
-	iniciarrepa = "PRESIONA  ~b~Y~w~  ĐỂ BẮT ĐẦU SỬA CHỮA",
-	ponerescalera = "PRESIONA  ~b~E~w~  ĐỂ ĐẶT THANG",
-	sacarescalera = "PRESIONA  ~b~E~w~  ĐỂ LẤY THANG",
-	espera = "Vui lòng chờ ~b~",
-	tofinish = "~w~ giây để hoàn thành.",
-	startjob = "PRESIONA  ~b~E~w~  ĐỂ BẮT ĐẦU CÔNG VIỆC",
-	jobiniciado = "Công việc bắt đầu. Hãy đến các điểm sửa chữa trên bản đồ.",
-	endjob = "PRESIONA  ~b~E~w~  ĐỂ KẾT THÚC CÔNG VIỆC",
-	jobterminado = "Bạn đã kết thúc ca làm việc!",
-	saveescalera = "PRESIONA  ~b~E~w~  ĐỂ CẤT THANG",
-	cogerescala = "PRESIONA  ~b~E~w~  ĐỂ LẤY THANG",
-    reparado = "Nơi này đã được sửa chữa."
+	iniciarrepa = "PRESIONA  ~b~Y~w~  PARA INICIAR LA REPARACION",
+	ponerescalera = "PRESIONA  ~b~Y~w~  PARA COLOCAR LA ESCALERA",
+	sacarescalera = "PRESIONA  ~b~Y~w~  PARA COGER LA ESCALERA",
+	espera = "Espera ~b~ ", -- ..seconds 
+	tofinish = "~w~ segundos para terminar de reparar.",
+	startjob = "PRESIONA  ~b~E~w~  PARA INICIAR EL TRABAJO",
+	jobiniciado = "Trabajo iniciado, ve a un estacionamiento.",
+	endjob = "PRESSIONE  ~b~E~w~  PARA TERMINAR EL TRABAJO",
+	jobterminado = "Terminaste tu trabajo, te espero otro dia!",
+	saveescalera = "PRESIONA  ~b~E~w~  PARA GUARDAR LA ESCALERA",
+	cogerescala = "PRESIONA  ~b~E~w~  PARA COGER LA ESCALERA"
+}
+
+
+--ESX CLOTHES--
+--Clothes
+Config.Clothes = {
+    male = {
+        ['tshirt_1'] = 0,  ['tshirt_2'] = 0,
+        ['torso_1'] = 122,   ['torso_2'] = 0,
+        ['arms'] = 1,  ['pants_1'] = 5,
+    },
+    female = {
+        ['tshirt_1'] = 15,  ['tshirt_2'] = 0,
+        ['torso_1'] = 4,   ['torso_2'] = 14,
+        ['arms'] = 4,
+        ['pants_1'] = 25,   ['pants_2'] = 1,
+        ['shoes_1'] = 16,   ['shoes_2'] = 4,
+    }
 }
 
 ---qbcore clothes--
--- LỖI NẰM Ở ĐÂY. BẠN CẦN THAY THẾ CÁC GIÁ TRỊ 'item' VÀ 'texture' BÊN DƯỚI.
+
 Config.Uniforms = {
 	['male'] = {
 		outfitData = {
@@ -38,9 +57,7 @@ Config.Uniforms = {
 			['torso2']  = {item = 56, texture = 0},
 			['arms']    = {item = 85, texture = 0},
 			['pants']   = {item = 45, texture = 4},
-            -- Lỗi có thể ở dòng này. Tôi đã đổi texture thành 0 để an toàn hơn.
-            -- Nếu vẫn lỗi, hãy thử thêm '--' ở đầu dòng để vô hiệu hóa nó.
-			['shoes']   = {item = 42, texture = 0}, -- Ví dụ: -- ['shoes']   = {item = 42, texture = 0},
+			['shoes']   = {item = 42, texture = 2},
 		}
 	},
 	['female'] = {

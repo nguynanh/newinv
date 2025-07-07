@@ -153,13 +153,10 @@ function ApplyShockEffect()
     local ptfxName = "ent_sht_elec_box"
     RequestNamedPtfxAsset(ptfxDict)
     while not HasNamedPtfxAssetLoaded(ptfxDict) do Wait(50) end
+    StartParticleFxNonLoopedOnEntity(ptfxName, playerPed, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.5, false, false, false)
 
-    SetPtfxAssetNextCall(ptfxDict)
-    StartNetworkedParticleFxNonLoopedOnEntity(ptfxName, playerPed,
-                                               0.0, 0.0, 0.0,
-                                               0.0, 0.0, 0.0,
-                                               1.5,
-                                               true, true, true)
+
+    
 
     local convulsionDuration = 10000 -- Thời gian hiệu ứng ragdoll (10 giây)
 
